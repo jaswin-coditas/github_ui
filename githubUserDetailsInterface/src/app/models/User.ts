@@ -1,3 +1,6 @@
+import { Moment } from 'moment-js';
+import { ModuleWithComponentFactories } from '@angular/core';
+
 export class User {
     login: string;
     id: number;
@@ -18,4 +21,17 @@ export class User {
     type: string;
     site_admin: boolean;
     score: number;
+    name: string;
+    company: string;
+    blog: string;
+    location: string;
+    email: string;
+    hireable: string;
+    bio: string;
+    public_repos: number;
+    public_gists: number;
+    followers: number;
+    following: number;
+    created_at: Moment;
+    updated_at: Moment;
 }

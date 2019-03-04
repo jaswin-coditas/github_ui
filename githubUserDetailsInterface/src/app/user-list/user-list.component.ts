@@ -12,6 +12,7 @@ export class UserListComponent implements OnInit {
   userSearchResponse: UserSearchResponse;
   constructor(private userInfoService: UserInfoService) { }
 
+  currentUser: User;
   searchQuery: string;
   page: string;
   per_page: string;
@@ -19,12 +20,23 @@ export class UserListComponent implements OnInit {
   order: string;
 
   ngOnInit() {
+  }
+
+  getSearchResults() {
+
+    this.page = '0';
+    this.per_page = '10';
+    this.sort = 'login';
+    this.order = 'asc';
     this.getUsersBySearchAndSortCriteria(this.searchQuery, this.page, this.per_page, this.sort, this.order);
   }
 
   getUsersBySearchAndSortCriteria(q: string, page: string, per_page: string, sort: string, order: string) {
     this.userInfoService.getUsersBySearchCriteria(q, page, per_page, sort, order).subscribe(
-      response => this.userSearchResponse = response
+      response => {
+        this.userSearchResponse = response;
+      }
     );
+
   }
 }
