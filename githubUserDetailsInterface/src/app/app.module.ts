@@ -12,6 +12,7 @@ import { NewIterationDirective } from './shared/directive/new-iteration.directiv
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserReposComponent } from './user-repos/user-repos.component';
+import { RepositoryComponent } from './repository/repository.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { UserReposComponent } from './user-repos/user-repos.component';
     NewIterationDirective,
     PaginationComponent,
     UserDetailsComponent,
-    UserReposComponent
+    UserReposComponent,
+    RepositoryComponent
   ],
   imports: [
     BrowserModule,
