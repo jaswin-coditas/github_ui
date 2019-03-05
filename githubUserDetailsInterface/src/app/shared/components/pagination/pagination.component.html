@@ -7,5 +7,5 @@
     <button *ngFor="let pageNum of getPages()" (click)="onPage(pageNum)">{{pageNum}}</button>
     <button (click)="onNext()" [disabled]="lastPage() || loading">Next</button>
   </div>
- 
+
 </div>

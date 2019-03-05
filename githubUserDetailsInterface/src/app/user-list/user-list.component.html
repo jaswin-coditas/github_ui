@@ -1,10 +1,11 @@
+<div class="mt-3 mb-3 text-center" *ngIf="totalCount">Total results {{totalCount}}</div>
 <div *ngIf="userSearchResponse">
   <div class="card mx-auto mt-3" style="width: 50rem;" *ngFor="let user of userSearchResponse.items;let i=index;">
     <div class="card-body">
       <h5 class="card-title"><i class="fas fa-user"></i> {{user.login}}</h5>
       <p class="card-text">
-        <span>Profile url : <a type="link" class="link" target="_blank" [href]="user.html_url">{{user.html_url}}</a></span>
-
+        <img [src]="user.avatar_url" height="100" *ngIf="user.avatar_url">
+        <span class="ml-3">Profile url : <a type="link" class="link" target="_blank" [href]="user.html_url">{{user.html_url}}</a></span>
       </p>
       <a href="#" class="btn btn-primary">more details</a>
     </div>
