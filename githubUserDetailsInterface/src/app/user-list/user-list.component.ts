@@ -49,12 +49,24 @@ export class UserListComponent implements OnInit, OnChanges {
         this.userSearchResponse = response;
         this.totalCount = this.userSearchResponse.total_count;
         // tslint:disable-next-line:forin
-        for (let index in this.userSearchResponse.items) {
+        for (const index in this.userSearchResponse.items) {
           let user: User;
           this.userInfoService.getUserByLoginId(this.userSearchResponse.items[index].login).
             subscribe(res => {
               user = res;
               this.userSearchResponse.items[index].name = user.name;
+              this.userSearchResponse.items[index].company = user.company;
+              this.userSearchResponse.items[index].blog = user.blog;
+              this.userSearchResponse.items[index].location = user.location;
+              this.userSearchResponse.items[index].email = user.email;
+              this.userSearchResponse.items[index].hireable = user.hireable;
+              this.userSearchResponse.items[index].bio = user.bio;
+              this.userSearchResponse.items[index].public_repos = user.public_repos;
+              this.userSearchResponse.items[index].public_gists = user.public_gists;
+              this.userSearchResponse.items[index].followers = user.followers;
+              this.userSearchResponse.items[index].following = user.following;
+              this.userSearchResponse.items[index].created_at = user.created_at;
+              this.userSearchResponse.items[index].updated_at = user.updated_at;
             });
         }
       }
