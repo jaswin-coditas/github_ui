@@ -2,14 +2,24 @@
 <div *ngIf="userSearchResponse">
   <div class="card mx-auto mt-3" style="width: 50rem;" *ngFor="let user of userSearchResponse.items;let i=index;">
     <div class="card-body">
-      <h5 class="card-title"><i class="fas fa-user"></i> {{user.login}}</h5>
+      <h5 class="card-title">{{user.name}}</h5>
+
       <p class="card-text">
         <img [src]="user.avatar_url" height="100" *ngIf="user.avatar_url">
-        <span class="ml-3">Profile url : <a type="link" class="link" target="_blank" [href]="user.html_url">{{user.html_url}}</a></span>
+        <span class="left-padding-10">Profile url : <a type="link" class="link" target="_blank" [href]="user.html_url">{{user.html_url}}</a>
+        </span>
+        <br>
+        <span class="left-padding-110"><i class="fas fa-user mr-2"></i> {{user.login}}</span>
+        <br>
+        <span class="left-padding-110"><i class="fas fa-envelope mr-2"></i> {{user.email}}</span>
+        <br>
+        <span class="left-padding-110"><i class="fas fa-location-arrow"></i> {{user.location}}</span>
+        <br>
+        <span class="left-padding-110">Company : {{user.company}}</span>
       </p>
       <a href="#" class="btn btn-primary">more details</a>
     </div>
   </div>
 </div>
-<app-pagination (goPage)="goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="3" [page]="page"
+<app-pagination (goPage)="goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="5" [page]="page"
   [perPage]="per_page" [count]="totalCount"></app-pagination>

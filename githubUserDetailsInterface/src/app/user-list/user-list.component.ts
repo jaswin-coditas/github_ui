@@ -15,6 +15,8 @@ export class UserListComponent implements OnInit, OnChanges {
   }
 
   currentUser: User;
+
+  additionalInfoForCurrentUser: User;
   @Input()
   searchQuery: string;
   page: number;
@@ -34,12 +36,8 @@ export class UserListComponent implements OnInit, OnChanges {
   }
 
   getSearchResults() {
-    if (this.searchQuery === '\s*') {
-     this.searchQuery = undefined;
-    }
-
     this.page = 0;
-    this.per_page = 10;
+    this.per_page = 3;
     this.sort = 'login';
     this.order = 'asc';
     this.getUsersBySearchAndSortCriteria(this.searchQuery, this.page, this.per_page, this.sort, this.order);
@@ -50,6 +48,15 @@ export class UserListComponent implements OnInit, OnChanges {
       response => {
         this.userSearchResponse = response;
         this.totalCount = this.userSearchResponse.total_count;
+        // tslint:disable-next-line:forin
+        for (let index in this.userSearchResponse.items) {
+          let user: User;
+          this.userInfoService.getUserByLoginId(this.userSearchResponse.items[index].login).
+            subscribe(res => {
+              user = res;
+              this.userSearchResponse.items[index].name = user.name;
+            });
+        }
       }
     );
 
@@ -68,4 +75,5 @@ export class UserListComponent implements OnInit, OnChanges {
     this.page--;
     this.getUsersBySearchAndSortCriteria(this.searchQuery, this.page, this.per_page, this.sort, this.order);
   }
+
 }
