@@ -34,4 +34,6 @@ export class User {
     following: number;
     created_at: Moment;
     updated_at: Moment;
+
+    showMoreDetails: boolean;
 }

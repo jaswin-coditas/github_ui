@@ -25,6 +25,8 @@ export class UserListComponent implements OnInit, OnChanges {
   order: string;
   totalCount: number;
 
+  showMoreDetails: boolean;
+
 
   ngOnInit() {
   }
@@ -86,6 +88,10 @@ export class UserListComponent implements OnInit, OnChanges {
   onPrev(): void {
     this.page--;
     this.getUsersBySearchAndSortCriteria(this.searchQuery, this.page, this.per_page, this.sort, this.order);
+  }
+
+  revertMoreDetailsFlag(user: User) {
+    user.showMoreDetails = !user.showMoreDetails;
   }
 
 }
