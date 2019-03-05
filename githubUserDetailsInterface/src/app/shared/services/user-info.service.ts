@@ -27,4 +27,5 @@ export class UserInfoService {
     return this.httpClient.get<User>
       (sprintf(APIEndPoints.GET_USER_BY_LOGIN_ID_API, login));
   }
+
 }

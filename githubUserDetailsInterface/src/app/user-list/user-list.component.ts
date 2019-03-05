@@ -90,8 +90,6 @@ export class UserListComponent implements OnInit, OnChanges {
     this.getUsersBySearchAndSortCriteria(this.searchQuery, this.page, this.per_page, this.sort, this.order);
   }
 
-  revertMoreDetailsFlag(user: User) {
-    user.showMoreDetails = !user.showMoreDetails;
-  }
+
 
 }

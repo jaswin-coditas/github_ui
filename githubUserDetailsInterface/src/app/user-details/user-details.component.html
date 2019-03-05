@@ -1,0 +1,23 @@
+<div class="card-body">
+    <h5 class="card-title">{{user.name}}</h5>
+
+    <p class="card-text">
+      <img [src]="user.avatar_url" height="100" *ngIf="user.avatar_url">
+      <span class="left-padding-10">Profile url : <a type="link" class="link" target="_blank" [href]="user.html_url">{{user.html_url}}</a>
+      </span>
+      <br>
+      <div *ngIf="user.showMoreDetails">
+        <span class="left-padding-110" *ngIf="user.login"><i class="fas fa-user mr-2"></i> {{user.login}}</span>
+        <br>
+        <span class="left-padding-110" *ngIf="user.email"><i class="fas fa-envelope mr-2"></i> {{user.email}}</span>
+        <br>
+        <span class="left-padding-110" *ngIf="user.location"><i class="fas fa-location-arrow"></i> {{user.location}}</span>
+        <br>
+        <span class="left-padding-110" *ngIf="user.company">Company : {{user.company}}</span>
+        <br>
+        <span class="left-padding-110" *ngIf="user.bio">Bio : {{user.bio}}</span>
+        <button class="card-button btn btn-link" (click)=revertMoreDetailsFlag(user)>less details...</button>
+      </div>
+      <button class="card-button btn btn-link" *ngIf="!user.showMoreDetails" (click)=revertMoreDetailsFlag(user)>more
+        details...</button>
+  </div>
