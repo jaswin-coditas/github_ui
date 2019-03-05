@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../models/User';
+import { UserInfoService } from '../shared/services/user-info.service';
+import { UserRepository } from '../models/UserRepository';
 
 @Component({
   selector: 'app-user-details',
@@ -8,13 +10,19 @@ import { User } from '../models/User';
 })
 export class UserDetailsComponent implements OnInit {
 
+  showReposClicked: boolean;
+  repositories: UserRepository[];
  @Input() user: User;
-  constructor() { }
+  constructor(private userInfoService: UserInfoService) { }
 
   ngOnInit() {
   }
 
   revertMoreDetailsFlag(user: User) {
     user.showMoreDetails = !user.showMoreDetails;
+  }
+
+  getReposByLogin(login: string) {
+     this.userInfoService.getUserRepositories(login).subscribe(response => this.repositories = response);
   }
 }

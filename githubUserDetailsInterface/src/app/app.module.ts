@@ -11,13 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { NewIterationDirective } from './shared/directive/new-iteration.directive';
 import { PaginationComponent } from './shared/components/pagination/pagination.component';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { UserReposComponent } from './user-repos/user-repos.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     NewIterationDirective,
     PaginationComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserReposComponent
   ],
   imports: [
     BrowserModule,
