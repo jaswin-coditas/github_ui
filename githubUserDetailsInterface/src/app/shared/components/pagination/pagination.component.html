@@ -1,0 +1,11 @@
+<!-- pagination.component.html -->
+<div class="pagination justify-content-end" *ngIf="count > 0 else zeroPagination">
+  <span>{{ getMin() }} - {{ getMax() }} of {{ count }}</span>
+  <!-- <span><span>  </span>{{ totalPages() }} pages</span> -->
+  <div>
+    <button (click)="onPrev()" [disabled]="page === 0 || loading">Previous</button>
+    <button *ngFor="let pageNum of getPages()" (click)="onPage(pageNum)">{{pageNum}}</button>
+    <button (click)="onNext()" [disabled]="lastPage() || loading">Next</button>
+  </div>
+ 
+</div>

@@ -13,7 +13,7 @@ export class UserInfoService {
   constructor(private httpClient: HttpClient) { }
 
 
-  getUsersBySearchCriteria(q: string, page: string, per_page: string, sort: string, order: string) {
+  getUsersBySearchCriteria(q: string, page: number, per_page: number, sort: string, order: string) {
     return this.httpClient.get<UserSearchResponse>
       (sprintf(APIEndPoints.SEARCH_USER_API, q, page, per_page, sort, order));
   }

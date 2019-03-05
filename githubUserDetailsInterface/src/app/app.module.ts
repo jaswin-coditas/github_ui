@@ -9,11 +9,13 @@ import { UserInfoService } from './shared/services/user-info.service';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule } from '@angular/forms';
 import { NewIterationDirective } from './shared/directive/new-iteration.directive';
+import { PaginationComponent } from './shared/components/pagination/pagination.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
-    NewIterationDirective
+    NewIterationDirective,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
