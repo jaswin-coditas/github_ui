@@ -16,12 +16,13 @@ export class UserListComponent implements OnInit, OnChanges {
 
   currentUser: User;
 
+
   additionalInfoForCurrentUser: User;
   @Input()
   searchQuery: string;
   page: number;
   per_page: number;
-  sort: string;
+  @Input() sort: string;
   order: string;
   totalCount: number;
 
@@ -40,7 +41,6 @@ export class UserListComponent implements OnInit, OnChanges {
   getSearchResults() {
     this.page = 0;
     this.per_page = 3;
-    this.sort = 'login';
     this.order = 'asc';
     this.getUsersBySearchAndSortCriteria(this.searchQuery, this.page, this.per_page, this.sort, this.order);
   }

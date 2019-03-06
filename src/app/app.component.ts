@@ -8,4 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'githubUserDetailsInterface';
   searchQuery: string;
+
+  sortBy: string;
+
+  setSortBy(sortBy: string) {
+   this.sortBy = sortBy;
+  }
 }
