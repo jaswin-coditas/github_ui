@@ -16,11 +16,12 @@
       <span class="left-padding-110" *ngIf="user.company">Company : {{user.company}}</span>
       <br>
       <span class="left-padding-110" *ngIf="user.bio">Bio : {{user.bio}}</span>
+      <br>
       <button class="btn btn-primary" (click)="getReposByLogin(user.login)" type="button" data-toggle="collapse"
         data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Show repositories
       </button>
-      <app-user-repos [repositories]="repositories" *ngIf="repositories"></app-user-repos>
+      <app-user-repos [repositories]="repositories" *ngIf="repositories && showReposClicked"></app-user-repos>
       <button class="card-button btn btn-link" (click)=revertMoreDetailsFlag(user)>less details...</button>
     </div>
     <button class="card-button btn btn-link" *ngIf="!user.showMoreDetails" (click)=revertMoreDetailsFlag(user)>more

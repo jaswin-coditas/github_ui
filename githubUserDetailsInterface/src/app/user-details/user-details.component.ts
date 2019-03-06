@@ -13,7 +13,9 @@ export class UserDetailsComponent implements OnInit {
   showReposClicked: boolean;
   repositories: UserRepository[];
  @Input() user: User;
-  constructor(private userInfoService: UserInfoService) { }
+  constructor(private userInfoService: UserInfoService) { 
+    this.showReposClicked = false;
+  }
 
   ngOnInit() {
   }
@@ -23,6 +25,9 @@ export class UserDetailsComponent implements OnInit {
   }
 
   getReposByLogin(login: string) {
+     this.showReposClicked = !this.showReposClicked;
+     if (!this.repositories) {
      this.userInfoService.getUserRepositories(login).subscribe(response => this.repositories = response);
+     }
   }
 }

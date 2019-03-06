@@ -13,6 +13,8 @@ import { PaginationComponent } from './shared/components/pagination/pagination.c
 import { UserDetailsComponent } from './user-details/user-details.component';
 import { UserReposComponent } from './user-repos/user-repos.component';
 import { RepositoryComponent } from './repository/repository.component';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
+  MatSortModule, MatTableModule } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,12 @@ import { RepositoryComponent } from './repository/repository.component';
     AppRoutingModule,
     HttpClientModule,
     MDBBootstrapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule
   ],
   providers: [UserInfoService],
   bootstrap: [AppComponent]
