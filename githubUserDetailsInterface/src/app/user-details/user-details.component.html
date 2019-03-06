@@ -21,6 +21,7 @@
         data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Show repositories
       </button>
+      <br>
       <app-user-repos [repositories]="repositories" *ngIf="repositories && showReposClicked"></app-user-repos>
       <button class="card-button btn btn-link" (click)=revertMoreDetailsFlag(user)>less details...</button>
     </div>

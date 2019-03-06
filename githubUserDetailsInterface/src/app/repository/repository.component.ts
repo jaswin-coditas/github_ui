@@ -10,6 +10,8 @@ export class RepositoryComponent implements OnInit {
 
  @Input() repository: UserRepository;
 
+ @Input() reposIndex: number;
+
   constructor() { }
 
   ngOnInit() {
