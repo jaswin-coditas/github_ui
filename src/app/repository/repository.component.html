@@ -1,0 +1,60 @@
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+          aria-controls="collapseOne">
+          <span>{{repository.name}}</span>
+
+          <span *ngIf="repository.language" class="pl-5">
+              <span class="pl-5"></span>
+              <span class="pl-5"></span>
+              <span class="pl-5"></span>
+              <span class="pl-5"></span>
+              <span class="pl-5"></span>
+              <span class="pl-5"></span>language: 
+              {{repository.language}}
+            </span>
+        </button>
+      </h5>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-dark"><span>1. Repository url : <a type="link" class="link" target="_blank"
+                [href]="repository.html_url">{{repository.html_url}}</a>
+            </span></li>
+          <li class="list-group-item list-group-item-dark"><span>2. Clone url : <a type="link" class="link" target="_blank"
+                [href]="repository.html_url">{{repository.clone_url}}</a>
+            </span></li>
+          <li class="list-group-item list-group-item-dark"> <span>3. SSH url : <a type="link" class="link" target="_blank"
+                [href]="repository.html_url">{{repository.ssh_url}}</a>
+            </span></li>
+          <li class="list-group-item list-group-item-dark"><span>4. SVN url : <a type="link" class="link" target="_blank"
+                [href]="repository.html_url">{{repository.svn_url}}</a>
+            </span></li>
+          <li class="list-group-item list-group-item-dark"> <span>5. GIT url : <a type="link" class="link" target="_blank"
+                [href]="repository.html_url">{{repository.git_url}}</a>
+            </span></li>
+          <li class="list-group-item list-group-item-dark"> <span>6. Full name : {{repository.full_name}}
+            </span></li>
+          <li class="list-group-item list-group-item-dark"> <span>7. Repository Type :
+              <span *ngIf="repository.private">Private</span>
+              <span *ngIf="!repository.private">Public</span>
+            </span></li>
+          <li class="list-group-item list-group-item-dark"> <span>8. Created at : {{repository.created_at | date:
+              'dd/mm/yyyy'}}
+            </span></li>
+          <li class="list-group-item list-group-item-dark"><span>9. Updated at : {{repository.updated_at | date:
+              'dd/mm/yyyy'}}
+            </span></li>
+          <li class="list-group-item list-group-item-dark"><span>10. Pushed at : {{repository.pushed_at | date:
+              'dd/mm/yyyy'}}
+            </span></li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
