@@ -4,5 +4,6 @@
       <app-user-details [user]="user"></app-user-details>
   </div>
 </div>
+
 <app-pagination (goPage)="goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="5" [page]="page"
   [perPage]="per_page" [count]="totalCount"></app-pagination>

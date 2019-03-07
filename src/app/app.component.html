@@ -1,27 +1,24 @@
 <nav class="navbar nav-bar-to-center navbar-expand-md navbar-dark bg-primary">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
-      aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarColor01">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-            aria-expanded="false">Sort by</a>
-          <div class="dropdown-menu drop-down-sort"  x-placement="bottom-start">
-            <a class="dropdown-item" (click)="setSortBy('followers')" >No of follower</a>
-            <a class="dropdown-item" (click)="setSortBy('repositories')" >No of repositories</a>
-            <a class="dropdown-item" (click)="setSortBy('joined')" >Date joined</a>
-          </div>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" name="search" [(ngModel)]="searchQuery" type="text" placeholder="Search">
-        <!-- <button class="btn btn-secondary my-2 my-sm-0" (click)="getSearchResults()" type="submit">
-          <i class="fas fa-search"></i>
-        </button> -->
-      </form>
-    </div>
-  </nav>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">Sort by</a>
+        <div class="dropdown-menu drop-down-sort" x-placement="bottom-start">
+          <a class="dropdown-item" (click)="setSortBy('followers')">No of follower</a>
+          <a class="dropdown-item" (click)="setSortBy('repositories')">No of repositories</a>
+          <a class="dropdown-item" (click)="setSortBy('joined')">Date joined</a>
+        </div>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" name="search" [(ngModel)]="searchQuery" type="text" placeholder="Search">
+    </form>
+  </div>
+</nav>
 <app-user-list [sort]="sortBy" [searchQuery]="searchQuery"></app-user-list>
