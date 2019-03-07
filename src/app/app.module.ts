@@ -15,6 +15,9 @@ import { UserReposComponent } from './user-repos/user-repos.component';
 import { RepositoryComponent } from './repository/repository.component';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
   MatSortModule, MatTableModule } from '@angular/material';
+  import {MatExpansionModule} from '@angular/material/expansion';
+  import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,9 @@ import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+    BrowserAnimationsModule
   ],
   providers: [UserInfoService],
   bootstrap: [AppComponent]

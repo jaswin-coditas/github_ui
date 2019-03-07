@@ -2,3 +2,15 @@
     width: 50%;
     text-align: center;
   }
+
+  .drop-down-sort {
+    position: absolute; 
+    transform: translate3d(0px, 38px, 0px);
+     top: 0px; left: 0px;
+      will-change: transform;
+  }
+
+  .nav-bar-to-center {
+    text-align: center;
+    height: 50px;
+  }

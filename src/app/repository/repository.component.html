@@ -1,57 +1,53 @@
-<div class="accordion" id="accordionExample">
-  <div class="card">
-    <div class="card-header btn btn-link btn-light" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-      aria-controls="collapseOne">
-      <h5 class="mb-0">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
         <div class="container">
           <div class="row">
-            <div class="col text-info">
+            <div class="col text-dark">
+              {{1+reposIndex+'. '}}
               {{repository.name}}
             </div>
-            <div class="col text-info">
+            <div class="col text-dark">
               {{repository.language}}
             </div>
           </div>
         </div>
-      </h5>
-    </div>
+      </mat-expansion-panel-header>
+      <ng-template matExpansionPanelContent>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-      <div class="card-body">
-        <ul class="list-group">
-          <li class="list-group-item list-group-item-dark"><span>1. Repository url : <a type="link" class="link" target="_blank"
-                [href]="repository.html_url">{{repository.html_url}}</a>
-            </span></li>
-          <li class="list-group-item list-group-item-dark"><span>2. Clone url : <a type="link" class="link" target="_blank"
-                [href]="repository.html_url">{{repository.clone_url}}</a>
-            </span></li>
-          <li class="list-group-item list-group-item-dark"> <span>3. SSH url : <a type="link" class="link" target="_blank"
-                [href]="repository.html_url">{{repository.ssh_url}}</a>
-            </span></li>
-          <li class="list-group-item list-group-item-dark"><span>4. SVN url : <a type="link" class="link" target="_blank"
-                [href]="repository.html_url">{{repository.svn_url}}</a>
-            </span></li>
-          <li class="list-group-item list-group-item-dark"> <span>5. GIT url : <a type="link" class="link" target="_blank"
-                [href]="repository.html_url">{{repository.git_url}}</a>
-            </span></li>
-          <li class="list-group-item list-group-item-dark"> <span>6. Full name : {{repository.full_name}}
-            </span></li>
-          <li class="list-group-item list-group-item-dark"> <span>7. Repository Type :
-              <span *ngIf="repository.private">Private</span>
-              <span *ngIf="!repository.private">Public</span>
-            </span></li>
-          <li class="list-group-item list-group-item-dark"> <span>8. Created at : {{repository.created_at | date:
-              'dd/MM/yyyy hh:mm a'}}
-            </span></li>
-          <li class="list-group-item list-group-item-dark"><span>9. Updated at : {{repository.updated_at | date:
-              'dd/MM/yyyy hh:mm a'}}
-            </span></li>
-          <li class="list-group-item list-group-item-dark"><span>10. Pushed at : {{repository.pushed_at | date:
-              'dd/MM/yyyy hh:mm a'}}
-            </span></li>
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-dark"><span>1. Repository url : <a type="link" class="link" target="_blank"
+              [href]="repository.html_url">{{repository.html_url}}</a>
+          </span></li>
+        <li class="list-group-item list-group-item-dark"><span>2. Clone url : <a type="link" class="link" target="_blank"
+              [href]="repository.html_url">{{repository.clone_url}}</a>
+          </span></li>
+        <li class="list-group-item list-group-item-dark"> <span>3. SSH url : <a type="link" class="link" target="_blank"
+              [href]="repository.html_url">{{repository.ssh_url}}</a>
+          </span></li>
+        <li class="list-group-item list-group-item-dark"><span>4. SVN url : <a type="link" class="link" target="_blank"
+              [href]="repository.html_url">{{repository.svn_url}}</a>
+          </span></li>
+        <li class="list-group-item list-group-item-dark"> <span>5. GIT url : <a type="link" class="link" target="_blank"
+              [href]="repository.html_url">{{repository.git_url}}</a>
+          </span></li>
+        <li class="list-group-item list-group-item-dark"> <span>6. Full name : {{repository.full_name}}
+          </span></li>
+        <li class="list-group-item list-group-item-dark"> <span>7. Repository Type :
+            <span *ngIf="repository.private">Private</span>
+            <span *ngIf="!repository.private">Public</span>
+          </span></li>
+        <li class="list-group-item list-group-item-dark"> <span>8. Created at : {{repository.created_at | date:
+            'dd/MM/yyyy hh:mm a'}}
+          </span></li>
+        <li class="list-group-item list-group-item-dark"><span>9. Updated at : {{repository.updated_at | date:
+            'dd/MM/yyyy hh:mm a'}}
+          </span></li>
+        <li class="list-group-item list-group-item-dark"><span>10. Pushed at : {{repository.pushed_at | date:
+            'dd/MM/yyyy hh:mm a'}}
+          </span></li>
+      </ul>
+    </ng-template>
 
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+    </mat-expansion-panel>
+  </mat-accordion>
