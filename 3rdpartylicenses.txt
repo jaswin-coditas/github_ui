@@ -363,6 +363,8 @@ THE SOFTWARE.
 
 @angular/material/tooltip
 
+@angular/material/expansion
+
 zone.js
 MIT
 The MIT License
