@@ -11,6 +11,9 @@ export class AppComponent {
 
   sortBy: string;
 
+  constructor() {
+    this.sortBy = 'joined';
+  }
   setSortBy(sortBy: string) {
    this.sortBy = sortBy;
   }

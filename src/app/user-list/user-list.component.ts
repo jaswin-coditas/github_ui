@@ -20,6 +20,7 @@ export class UserListComponent implements OnInit, OnChanges {
   additionalInfoForCurrentUser: User;
   @Input()
   searchQuery: string;
+  searchQueryBkp: string;
   page: number;
   per_page: number;
   @Input() sort: string;
@@ -35,6 +36,9 @@ export class UserListComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     if (changes.searchQuery.previousValue !== changes.searchQuery.currentValue) {
       this.getSearchResults();
+    }
+    if ('undefined' === this.searchQuery) {
+
     }
   }
 
