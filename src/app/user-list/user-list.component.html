@@ -1,4 +1,4 @@
-<div class="mt-3 mb-3 text-center" *ngIf="totalCount">Total results {{totalCount}}</div>
+<div class="mt-3 mb-3 total_Results" *ngIf="totalCount">Total results {{totalCount}}</div>
 <div *ngIf="userSearchResponse">
   <div class="container px-0">
     <div class="card mt-3 mr-3" *ngFor="let user of userSearchResponse.items;let i=index;">
@@ -7,5 +7,5 @@
   </div>
 </div>
 
-<app-pagination (goPage)="goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="5" [page]="page"
+<app-pagination class="Pagination" (goPage)="goToPage($event)" (goNext)="onNext()" (goPrev)="onPrev()" [pagesToShow]="5" [page]="page"
   [perPage]="per_page" [count]="totalCount"></app-pagination>

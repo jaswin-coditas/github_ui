@@ -31,3 +31,16 @@
 .card_size {
     width: 50rem;
 }
+
+.total_Results{
+    position: relative;
+    left : 390px;
+    top: 5px;
+    z-index: 3;
+}
+.Pagination{
+    position: fixed;
+    right : 8px;
+    top: 912px;
+    z-index: 3;
+}
