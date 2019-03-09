@@ -1,4 +1,4 @@
-<nav class="navbar nav-bar-to-center navbar-expand-md navbar-dark bg-primary">
+<!-- <nav class="navbar nav-bar-to-center navbar-expand-md navbar-dark bg-primary">
 
   <div class="collapse navbar-collapse" id="navbarColor01">
     <ul class="navbar-nav mx-auto">
@@ -17,4 +17,34 @@
     </form>
   </div>
 </nav>
+<app-user-list [sort]="sortBy" [searchQuery]="searchQuery"></app-user-list> -->
+
+<div class="jumbotron py-3 bg-primary">
+  <div class="container px-0">
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group mr-5">
+        <button type="button" class="btn btn-light dropdown-toggle px-5" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Sort By
+        </button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="setSortBy('followers')">No of follower</a>
+          <a class="dropdown-item" (click)="setSortBy('repositories')">No of repositories</a>
+          <a class="dropdown-item" (click)="setSortBy('joined')">Date joined</a>
+        </div>
+      </div>
+
+      <div class="ml-5 w-25">
+        <div class="input-group">
+          <input style="border-radius: 4px;" type="text" class="form-control mr-sm-2" name="search" [(ngModel)]="searchQuery" class="form-control"
+            placeholder="Search">
+          <span class="icon">
+            <i class="fas fa-search "></i>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 <app-user-list [sort]="sortBy" [searchQuery]="searchQuery"></app-user-list>

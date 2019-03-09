@@ -10,6 +10,13 @@
       will-change: transform;
   }
 
+  .icon{
+  position: relative;
+  left : -26px;
+  top: 7px;
+  z-index: 3;
+  }
+
   .nav-bar-to-center {
     text-align: center;
     height: 50px;
